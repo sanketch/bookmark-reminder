@@ -1,16 +1,14 @@
 chrome.browserAction.onClicked.addListener(function() {
+	
 	chrome.tabs.query({active: true, currentWindow: true}, function(arrayOfTabs) {
-
-     var activeTab = arrayOfTabs[0];
-     activeTabUrl = arrayOfTabs[0].url; // gets the URL
-     //alert(activeTabUrl);
+	     activeTabUrl = arrayOfTabs[0].url; // gets the URL
+	     //alert(activeTabUrl);
   	});
-
-
+  	//alert(activeTabUrl);
     var href = "https://www.google.com/calendar/render?" + "action=TEMPLATE&text=Reminder&details="+ activeTabUrl+"&trp%3B=true&gsessionid=OK&output=xml";
     //sample google cal url
  	//https://www.google.com/calendar/render?action=TEMPLATE&text=ajsdasjhd&details=asd&trp%3B=true&gsessionid=OK&output=xml
-  	window.open(href, 'testwindow', 'width=700,height=600');
+  	window.open(href, 'Reminder', 'width=700,height=700');
 });
 
 // Called when the user clicks on the browser action.

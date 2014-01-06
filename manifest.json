@@ -8,30 +8,16 @@
           "128": "icon128.png" },
 
   "permissions": [
-    "tabs", "activeTab" 
-    //"http://*/*", "https://*/*" //, "http://*.google.com/", "https://*.google.com/"
-                  ],
+    "tabs" ],
   
   "background": {
     "scripts": ["background.js"]
-    //"persistent": true
   },
-
-  // "background": { 
-  //    "page":"bg.html"
-  //    },
-   // "content_scripts": [
-   // {
-   //   "matches": ["http://*/*", "https://*/*"],
-   //   "js": ["content.js"]
-   // }
-   // ],  
 
   "optional_permissions": [ "tabs"],
 
   "browser_action": {
-    "default_icon": "icon.png" //19x19px
-    //"default_popup": "popup.html"
+    "default_icon": "icon.png" 
   }
 
 }
