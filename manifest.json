@@ -11,7 +11,8 @@
     "tabs" ],
   
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["eventPage.js"],
+    "persistent": false
   },
 
   "optional_permissions": [ "tabs"],
