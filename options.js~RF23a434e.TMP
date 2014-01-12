@@ -1,9 +1,0 @@
-var defaultPreference = "gcal";
-
-
-function saveOptions() {
-	var select = document.getElementById("preference");
-	preference = select.children[select.selectedIndex].value;
-	localStorage["preference"] = preference;
-}
-
