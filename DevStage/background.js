@@ -10,7 +10,10 @@ chrome.browserAction.onClicked.addListener(function() {
     var href = "https://www.google.com/calendar/render?" + "action=TEMPLATE&text=Reminder&details="+ activeTabUrl+"&trp%3B=true&gsessionid=OK&output=xml";
     //sample google cal url
  	//https://www.google.com/calendar/render?action=TEMPLATE&text=ajsdasjhd&details=asd&trp%3B=true&gsessionid=OK&output=xml
-  	window.open(href, 'testwindow', 'width=700,height=600');
+  	//window.open(href, 'testwindow', 'width=700,height=600');
+
+
+
 });
 
 // Called when the user clicks on the browser action.

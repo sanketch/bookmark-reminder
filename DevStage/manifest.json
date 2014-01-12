@@ -8,7 +8,13 @@
           "128": "icon128.png" },
 
   "permissions": [
-    "tabs"
+      "contextMenus",
+    "storage",
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "http://www.google.com/calendar/*",
+    "https://www.google.com/calendar/*"
     //"http://*/*", "https://*/*" //, "http://*.google.com/", "https://*.google.com/"
                   ],
   
@@ -30,9 +36,26 @@
 
   "optional_permissions": [ "tabs"],
 
+   "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "jquery-1.10.2.min.js",
+        "lib/moment+langs.min.js",
+        "utils.js",
+        "events_microformats.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+
+
   "browser_action": {
-    "default_icon": "icon.png" //19x19px
-    //"default_popup": "popup.html"
+    "default_icon": "icon.png", //19x19px
+    "default_popup": "popup.html"
   }
 
 }
