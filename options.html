@@ -2,14 +2,34 @@
 <head>
     <title>Options for Bookmark reminder </title>
     <script type="text/javascript" src="options.js"></script>
+    <style>
+        .container{
+            width:80%;
+            height: 200px;
+            margin: auto auto;
+            background-color: #F8DCDC;
+        }
+        p,h2,h3{
+            text-align: center;
+        }
+        body{
+            font-family: sans-serif;
+        }
+    </style>
 </head>
 <body>
-    <h1>Select your preferred option for saving the reminder</h1>
-    <select id="preference">
-        <option value="gCal">gCal</option>
-        <option value="iCal">iCal</option>
-    </select>
-    <br />
-    <button>Save</button>
+    <div class="container">
+        <br />
+        <h2>You current option is:  <span id = "current"></span></h2>
+        <h3>Change your preferred option for saving the reminder</h3>
+        <div style="text-align:center;">
+            <select id="preference">
+                <option value="gCal">Google Calendar</option>
+                <option value="iCal">iCalendar/Outlook</option>
+            </select>
+            
+            <button>Save</button>
+        </div>
+    </div>
 </body>
 </html>

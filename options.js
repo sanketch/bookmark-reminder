@@ -1,4 +1,4 @@
-localStorage["preference"] = "gCal";
+//localStorage["preference"] = "gCal";
 
 function clickHandler(e) {
   	var select = document.getElementById("preference");
@@ -10,3 +10,7 @@ function clickHandler(e) {
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelector('button').addEventListener('click', clickHandler);
 });
+
+window.onload = function (){
+	document.getElementById("current").textContent = localStorage.preference;
+}
