@@ -42,6 +42,19 @@ chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
   });
 });
 
+
+
+
+// Called when the user clicks on the browser action.
+// chrome.browserAction.onClicked.addListener(function(tab) {
+//   // No tabs or host permissions needed!
+//   console.log('Turning  red!');
+//   chrome.tabs.executeScript({
+//     code: 'window.location.href = "http://www.google.com"'
+//   }); 
+// });
+
+
 //   newurl = viewtext_base_url;
   //chrome.tabs.sendMessage({redirect: newurl}); // send message to redirect
 

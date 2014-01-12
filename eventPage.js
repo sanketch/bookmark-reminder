@@ -1,10 +1,14 @@
 chrome.browserAction.onClicked.addListener(function() {
 	
 	//check if preference is defined through options
+	if(localStorage.preference == undefined){
+		localStorage.preference = "gCal";
+	}
+
 	console.log(localStorage.preference);
 	chrome.tabs.query({active: true, currentWindow: true}, function(arrayOfTabs) {
-		     activeTabUrl = arrayOfTabs[0].url; // gets the URL
-		     activeTabTitle = arrayOfTabs[0].title;
+		    activeTabUrl = arrayOfTabs[0].url; // gets the URL
+		    activeTabTitle = arrayOfTabs[0].title;
 		     //alert(activeTabUrl);
 	  	});
 
@@ -22,17 +26,6 @@ chrome.browserAction.onClicked.addListener(function() {
 		saveAs(blob, "reminder.ics");
 	}
 });
-
-
-
-// Called when the user clicks on the browser action.
-// chrome.browserAction.onClicked.addListener(function(tab) {
-//   // No tabs or host permissions needed!
-//   console.log('Turning  red!');
-//   chrome.tabs.executeScript({
-//     code: 'window.location.href = "http://www.google.com"'
-//   }); 
-// });
 
 
 
