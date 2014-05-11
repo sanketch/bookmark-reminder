@@ -31,9 +31,7 @@ chrome.browserAction.onClicked.addListener(function() {
 				saveAs(blob, "reminder.ics");
 				//alert("ical");
 			}
-	  	});
-
-
+	});
 });
 
 
