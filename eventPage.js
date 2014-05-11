@@ -19,8 +19,12 @@ chrome.browserAction.onClicked.addListener(function() {
 				//alert("gcal");
 			}
 			else{
+				var cur = new Date();
+				var curMonth = cur.getUTCMonth()+1;
+				var startTime = cur.getUTCFullYear()+""+(curMonth<10?"0":"")+curMonth+""+(cur.getUTCDate()+1)+"T"+cur.getUTCHours()+""+cur.getUTCMinutes()+"00Z";
+				var endTime = cur.getUTCFullYear()+""+(curMonth<10?"0":"")+curMonth+""+(cur.getUTCDate()+1)+"T"+(cur.getUTCHours()+1)+""+cur.getUTCMinutes()+"00Z";
 				var eventFileStart = "BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\n";
-				var eventFileCustom = "SUMMARY:Reminder for"+activeTabTitle+"\nDESCRIPTION:Visit "+activeTabUrl+ "\nLOCATION:"+activeTabUrl+"\n";
+				var eventFileCustom = "SUMMARY:Reminder for "+activeTabTitle+"\nDESCRIPTION:Visit "+activeTabUrl+ "\nLOCATION:"+activeTabUrl+"\nDTSTART:"+startTime+"\nDTEND:"+endTime+"\n";
 				var eventFileEnd = "END:VEVENT\nEND:VCALENDAR"
 				var eventReminder = eventFileStart + eventFileCustom + eventFileEnd;
 				var blob = new Blob([eventReminder], {type: "text/plain;charset=utf-8"});
@@ -31,7 +35,5 @@ chrome.browserAction.onClicked.addListener(function() {
 
 
 });
-
-
 
 
